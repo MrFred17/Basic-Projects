@@ -41,22 +41,17 @@ def find_target_pair(arr1, arr2, target):  # Time: O(n log n)
     return pair
 
 
-array1 = [5, -4, 3, 12, 20]
-array2 = [9, 1, 11, 8, -7]
 
-# Let's try with a sum of 20:
-print(find_target_pair(array1, array2, 20))
-# Yay! Worked. Returned 12 and 8!
+def find_target_sum(array1, array2, target):   # Another solution, though, doesn't give the closest pair to target
+  array1_set = set()                           # This solution gives all the pairs that are equale.
+  
+  for n in array1:
+    array1_set.add(n)
 
-# Now let's try a sum that is larger than all possible sums.
-# The largest sum possible is 31. Let's see
-print(find_target_pair(array1, array2, 36))
-# Worked again! Returned 20 and 9!
+  for num in array2:
+    if target - num in array1_set:
+      return target - num), ',', num
 
-# And now, the final challenge awaits!
-# Let's test a negative result! (-2, for example)
-print(find_target_pair(array1, array2, -2))
-# Wo-Hoo! Worked, even for those filthy negatives
 
 
 
