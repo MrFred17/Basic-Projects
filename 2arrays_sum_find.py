@@ -43,7 +43,7 @@ def find_target_pair(arr1, arr2, target):  # Time: O(n log n)
 
 
 def find_target_sum(array1, array2, target):   # Another solution, though, doesn't give the closest pair to target
-  array1_set = set()                           # This solution gives all the pairs that are equale.
+  array1_set = set()                           # This solution gives all the pairs that are equal.
   
   for n in array1:
     array1_set.add(n)
